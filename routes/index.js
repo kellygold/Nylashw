@@ -3,7 +3,7 @@ var router = express.Router();
 
 const Nylas = require('nylas');
 
-Nylas.config({ clientId: '90m8dh2ue1rmjp2hvlja8rypf', clientSecret: '5y6iwa9cyx19w6t6r1jywolne'});
+Nylas.config({ clientId: '8tu5utxqfvgbrldmvzwn5q1xp', clientSecret: '8696g5bq72eycuaymi9agn5us'});
 options = {
   loginHint: 'you_email@example.com',
   redirectURI: 'http://localhost:3000/callback',

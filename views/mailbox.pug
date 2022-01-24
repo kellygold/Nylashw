@@ -1,0 +1,7 @@
+extends layout
+
+block content 
+  script(src='https://unpkg.com/@nylas/components-mailbox@1.1.6-canary.6')
+  script(src='https://unpkg.com/@nylas/components-composer')
+  .app(style='height:800px')
+    nylas-mailbox#dc2bcc24-2549-420f-8434-fa1e64224aa2(access_token='7ZJXdHwV3uzjRwJK7bgoyUji9ClYJV' show_reply='true' show_reply_all='true')  

@@ -6,6 +6,12 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@nylas/components-agenda": "^1.0.14",
+    "@nylas/components-availability": "^1.0.6",
+    "@nylas/components-composer": "^1.0.14",
+    "@nylas/components-conversation": "^1.0.14",
+    "@nylas/components-mailbox": "^1.0.15-canary.0",
+    "@nylas/components-scheduler": "^1.0.15-canary.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",

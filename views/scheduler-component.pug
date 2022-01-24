@@ -1,0 +1,73 @@
+extends layout
+
+
+block content 
+  script(src='https://unpkg.com/@nylas/components-scheduler')
+  script(src='https://unpkg.com/@nylas/components-availability@1.0.14')
+  .app(style='height:400px')
+    nylas-scheduler#6d42cc8e-05c8-4f8d-8875-df89585edb8c(access_token='7ZJXdHwV3uzjRwJK7bgoyUji9ClYJV')
+  .app(style='height:800px')
+    nylas-availability#fee92065-882d-4e72-a0e7-c78f52c838a4(show_as_week='true' allow_booking='true' access_token='7ZJXdHwV3uzjRwJK7bgoyUji9ClYJV')
+  script.
+    document.addEventListener("DOMContentLoaded", function() {
+    const availability = document.querySelector("nylas-availability");
+    const scheduler = document.querySelector("nylas-scheduler");
+    availability.email_ids = ["kelly.g@nylas.com"];
+    availability.open_hours = [{
+    startWeekday: 0,
+    startHour: 12,
+    startMinute: 30,
+    endWeekday: 0,
+    endHour: 16,
+    endMinute: 0,
+    }, {
+    startWeekday: 1,
+    startHour: 9,
+    startMinute: 0,
+    endWeekday: 1,
+    endHour: 17,
+    endMinute: 0,
+    }, {
+    startWeekday: 2,
+    startHour: 9,
+    startMinute: 0,
+    endWeekday: 2,
+    endHour: 17,
+    endMinute: 0,
+    }, {
+    startWeekday: 3,
+    startHour: 9,
+    startMinute: 0,
+    endWeekday: 3,
+    endHour: 17,
+    endMinute: 0,
+    }, {
+    startWeekday: 4,
+    startHour: 9,
+    startMinute: 0,
+    endWeekday: 4,
+    endHour: 17,
+    endMinute: 0,
+    }, {
+    startWeekday: 5,
+    startHour: 9,
+    startMinute: 0,
+    endWeekday: 5,
+    endHour: 17,
+    endMinute: 0,
+    }, {
+    startWeekday: 6,
+    startHour: 11,
+    startMinute: 30,
+    endWeekday: 6,
+    endHour: 15,
+    endMinute: 0,
+    }, ];
+    availability.addEventListener("timeSlotChosen", (event) => {
+    scheduler.slots_to_book = event.detail.timeSlots;
+    });
+    scheduler.addEventListener("bookedEvents", () => {
+    availability.reload(true, true);
+    });
+    scheduler.recurrence_cadence = ["daily", "weekdays", "weekly"];
+    });
